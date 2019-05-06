@@ -36,7 +36,7 @@ public class InputReader
         String[] wordArray = inputLine.split(" ");  // split at spaces
 
         // add words from array into hashset 
-        HashSet<String> words = new HashSet<>();
+        HashSet<String> words = new HashSet<String>();
         for(String word : wordArray) {
             words.add(word);
         }
