@@ -121,14 +121,13 @@ public class Responder
      */
     private void fillDefaultResponses()
     {
-        Charset charset = Charset.forName("US-ASCII");
-        Path path = Paths.get(FILE_OF_DEFAULT_RESPONSES);
-        try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
+        try{ BufferedReader reader = new BufferedReader(new FileReader(FILE_OF_DEFAULT_RESPONSES)); 
             String response = reader.readLine();
             while(response != null) {
                 defaultResponses.add(response);
                 response = reader.readLine();
             }
+            reader.close();
         }
         catch(FileNotFoundException e) {
             System.err.println("Unable to open " + FILE_OF_DEFAULT_RESPONSES);
